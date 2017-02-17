@@ -145,7 +145,7 @@
     <ClInclude Include="..\Employee.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\cppse16.cpp" />
+    <ClCompile Include="..\Test.cpp" />
     <ClCompile Include="..\Employee.cpp" />
   </ItemGroup>
   <ItemGroup>
