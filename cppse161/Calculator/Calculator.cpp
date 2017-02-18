@@ -1,5 +1,8 @@
 #include"Calculator.hpp"
 
+using namespace std;
+using namespace dll;
+
 Calculator::Calculator(int num1,char op,int num2)  {	// 构造函数的实现
 	operand1 = num1;		
 	operat = op; 
@@ -174,7 +177,7 @@ int Calculator::calChoose_exp5() {
 	catch(DivideByZero){								
 		throw;				// 再次抛掷
 	}
-	catch(OperationTypeNoExist)	{						
+	catch(dll::OperationTypeNoExist)	{						
 		throw;				// 再次抛掷
 	}
-} 
+}
