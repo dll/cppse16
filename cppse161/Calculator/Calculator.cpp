@@ -3,28 +3,35 @@
 using namespace std;
 using namespace dll;
 
-Calculator::Calculator(int num1,char op,int num2)  {	// 构造函数的实现
+Calculator::Calculator(double num1,char op,double num2)  {	// 构造函数的实现：单算
 	operand1 = num1;		
 	operat = op; 
 	operand2 = num2; 
+	result = operand1;
 }
-int Calculator::add ()  { 		// 加运算函数的实现
+Calculator::Calculator(char op, double num2) {	// 构造函数重载的实现：连算
+	operat = op;
+	operand2 = num2;
+}
+double Calculator::result = 0;
+
+double Calculator::add ()  { 		// 加运算函数的实现
 	return operand1 + operand2; 
 }
-int Calculator::sub ()	  {		// 减运算函数的实现
+double Calculator::sub ()	  {		// 减运算函数的实现
 	return operand1 - operand2; 
 }
-int Calculator::mlt ()	 {		// 乘运算函数的实现
+double Calculator::mlt ()	 {		// 乘运算函数的实现
 	return operand1 * operand2; 
 }
-int Calculator::div ()	 {		// 除运算函数的实现
+double Calculator::div ()	 {		// 除运算函数的实现
 	if(operand2 == 0)
 		//throw -1;
 		throw DivideByZero();	// 抛掷0除异常
 	return operand1 / operand2; 
 }
 
-int Calculator::calChoose_ie() {
+double Calculator::calChoose_ie() {
 	if (operat =='+')
 		return add ();
 	else if (operat =='-')
@@ -38,7 +45,7 @@ int Calculator::calChoose_ie() {
 		exit (1);
 	}
 }
-int Calculator::calChoose_sc() {
+double Calculator::calChoose_sc() {
 	switch (operat)  {
 	case '+':
 		return add ();break;
@@ -54,7 +61,7 @@ int Calculator::calChoose_sc() {
 	}
 }
 
-int Calculator::calChoose_exp() {
+double Calculator::calChoose_exp() {
 	switch (operat)  {
 	case '+':
 		return add ();break;
@@ -70,7 +77,7 @@ int Calculator::calChoose_exp() {
 				return div ();break;
 			}
 		}
-		catch (int){			// 捕获整数类型异常
+		catch (double){			// 捕获整数类型异常
 			cerr << "除数为0" << endl;
 			exit (1);
 		}
@@ -79,7 +86,7 @@ int Calculator::calChoose_exp() {
 			   exit (1);
 	}
 } 
-int Calculator::calChoose_exp1() {
+double Calculator::calChoose_exp1() {
 	try{				// 检测异常
 		switch (operat) {
 		case '+':
@@ -95,13 +102,13 @@ int Calculator::calChoose_exp1() {
 			exit (1);
 		}
 	}
-	catch(int){			// 捕获并处理异常
+	catch(double){			// 捕获并处理异常
 		std::cerr<<"除数为0"<<std::endl;
 		exit (1);
 	}
 } 
 
-int Calculator::calChoose_exp2() {
+double Calculator::calChoose_exp2() {
 	try{				// 检测异常
 		switch (operat) {
 		case '+':
@@ -117,12 +124,12 @@ int Calculator::calChoose_exp2() {
 			exit (1);
 		}
 	}
-	catch(int){		// 捕获再抛掷
+	catch(double){		// 捕获再抛掷
 		throw;
 	}
 } 
 
-int Calculator::calChoose_exp3() {
+double Calculator::calChoose_exp3() {
 	switch (operat) {
 	case '+':
 		return add();break;
@@ -140,7 +147,7 @@ int Calculator::calChoose_exp3() {
 			throw 'e';
 	}
 } 
-int Calculator::calChoose_exp4() {
+double Calculator::calChoose_exp4() {
 	switch (operat) {
 	case '+':
 		return add ();break;
@@ -159,7 +166,7 @@ int Calculator::calChoose_exp4() {
 	}
 } 
 
-int Calculator::calChoose_exp5() {
+double Calculator::calChoose_exp5() {
 	try{
 		switch (operat) {
 		case '+':
@@ -180,4 +187,47 @@ int Calculator::calChoose_exp5() {
 	catch(dll::OperationTypeNoExist)	{						
 		throw;				// 再次抛掷
 	}
+}
+/*
+double Calculator::Calculate(){
+	try {
+		switch (operat) {
+		case '+':
+			return operand1 + operand2; break;
+		case '-':
+			return operand1 - operand2; break;
+		case '*':
+			return operand1 * operand2; break;
+		case '/':
+			return operand1 / operand2; break;
+		default:
+			throw OperationTypeNoExist();
+		}
+	}
+	catch (OperationTypeNoExist) {
+		throw;
+	}
+}*/
+
+double Calculator::Calculate() {
+	//static double result = operand1;
+	operand1 = result;
+	try {
+		switch (operat) {
+		case '+':
+			return result = operand1 + operand2; break;
+		case '-':
+			return result = operand1 - operand2; break;
+		case '*':
+			return result = operand1 * operand2; break;
+		case '/':
+			return result = operand1 / operand2; break;
+		default:
+			throw OperationTypeNoExist();
+		}
+	}
+	catch (OperationTypeNoExist) {
+		throw;
+	}
+	return result;
 }

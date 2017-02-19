@@ -77,25 +77,81 @@ int main () {
 	}*/
 	
 	//捕获任何异常...
-	int number1,number2;
+	double number1,number2,result;
 	char op;
+	/*
+	{
+		std::cout << "多算式1：数据成员number1存储中间结果\n请输入一个算式：";
+		std::cin >> number1 >> op >> number2;
+		dll::Calculator cacl1(number1, op, number2);
+		std::cout << "计算结果为：" << (number1 = cacl1.Calculate()) << std::endl;
+		std::cin >> op >> number2;
+		dll::Calculator cacl2(op, number2);//重载构造函数
+		std::cout << "计算结果为：" << (number1 = cacl2.Calculate()) << std::endl;
+		std::cin >> op >> number2;
+		dll::Calculator cacl3(op, number2);//重载构造函数
+		std::cout << "计算结果为：" << cacl3.Calculate() << std::endl;
+	}
+	{
+		std::cout << "\n\n多算式2：静态局部变量存储中间结果\n请输入一个算式：";
+		std::cin >> number1 >> op >> number2;
+		dll::Calculator cacl11(number1, op, number2);
+		std::cout << "计算结果为：" << cacl11.Calculate()<< std::endl;
+		std::cin >> op >> number2;
+		dll::Calculator cacl22(op, number2);//重载构造函数
+		std::cout << "计算结果为：" << cacl22.Calculate()<< std::endl;
+		std::cin >> op >> number2;
+		dll::Calculator cacl33(op, number2);//重载构造函数
+		std::cout << "计算结果为：" << cacl33.Calculate() << std::endl;
+	}
+	{
+		std::cout << "\n\n多算式3：静态成员变量存储中间结果\n请输入一个算式：";
+		std::cin >> number1 >> op >> number2;
+		dll::Calculator cacl111(number1, op, number2);
+		std::cout << "计算结果为：" << cacl111.Calculate() << std::endl;
+		std::cin >> op >> number2;
+		dll::Calculator cacl222(op, number2);//重载构造函数
+		std::cout << "计算结果为：" << cacl222.Calculate() << std::endl;
+		std::cin >> op >> number2;
+		dll::Calculator cacl333(op, number2);//重载构造函数
+		std::cout << "计算结果为：" << cacl333.Calculate() << std::endl;
+	}
+	*/
+	/*
+	{
+		std::cout << "\n\n任意多算式4：重复结构while\n请输入一个算式：";
+		try {			std::cin >> number1 >> op >> number2;			Calculator cal444(number1, op, number2);			result = cal444.Calculate();			while (std::cin >> op, op != '=') {				std::cin >> number2;				Calculator cal444(op, number2);				result = cal444.Calculate();				std::cout << "计算结果：" << result << std::endl;			}
+		}
+		catch (DivideByZero) {
+			std::cout << "除数为0！" << std::endl;
+		}
+		catch (dll::OperationTypeNoExist) {
+			std::cout << "没有这种操作类型！" << std::endl;
+		}
+		catch (...) {
+			std::cout << "出现其它异常！" << std::endl;
+		}
+		std::cout << "计算结果：" << result << std::endl;
+	}
+	*/
+
+	{
+		std::cout << "\n\n任意多算式5：重复结构do-while\n";
+		try {			std::cout << "请输入一个算式：";			std::cin >> result >> op;			//while (std::cin >> op, op != '=') {			do{				std::cin >> number2;				Calculator cal555(result,op, number2);				result = cal555.Calculate();				std::cout << "计算结果：" << result << std::endl;			} while (std::cin >> op, op != '=');//有分号
+		}
+		catch (DivideByZero) {
+			std::cout << "除数为0！" << std::endl;
+		}
+		catch (dll::OperationTypeNoExist) {
+			std::cout << "没有这种操作类型！" << std::endl;
+		}
+		catch (...) {
+			std::cout << "出现其它异常！" << std::endl;
+		}
+		std::cout << "计算结果：" << result << std::endl;
+	}
 	
-	std::cout << "请输入一个算式：";
-	std::cin >> number1 >> op >> number2; 
-	
-	try{	
-		dll::Calculator cacl(number1,op,number2);	
-		std::cout << "计算结果为："<< cacl.calChoose_exp5() << std::endl;
-	}
-	catch(DivideByZero){
-		std::cout<<"除数为0！"<< std::endl; 
-	}
-	catch(dll::OperationTypeNoExist)	{
-		std::cout<<"没有这种操作类型！"<< std::endl; 
-	}
-	catch(...){
-		std::cout<<"出现其它异常！"<< std::endl; 
-	}
-	
+	system("pause");
+
 	return 0;
 }
