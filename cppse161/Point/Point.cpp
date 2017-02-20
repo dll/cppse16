@@ -10,5 +10,16 @@ Point::Point(std::string name, float x, float y) {
 
 //显示函数/方法
 void Point::ShowPoint() {
-	std::cout << pName << "  " << pX << "  " << pY << std::endl;//在显示器上打印
+	std::cout << pName << "  " << pX << "  " << pY <<"\n"<< std::endl;//在显示器上打印
+}
+
+//实现三个重载的构造函数：定义define
+Point::Point(){}
+Point::Point(std::string name) {
+	this->pName = name;
+}
+Point::Point(Point & p) {
+	this->pName = p.pName;
+	this->pX = p.pX;
+	this->pY = p.pY;
 }

@@ -12,6 +12,11 @@ class Point {
 		float  pY;//y坐标
 	//定义两个公共方法
 	public://公共方法
+		//添加三个重载构造函数：声明declare
+		Point();
+		Point(std::string name);
+		Point(Point & p);
+
 		Point(std::string name, float x, float y);//创建类对象
 		void ShowPoint();//显示对象
 };
