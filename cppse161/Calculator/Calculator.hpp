@@ -1,7 +1,7 @@
 #pragma once
 
 #include <iostream>	
-#include <cstdlib>	
+#include <cstdlib>	//system,exit函数
 
 #include"Exception.hpp"
 
@@ -15,7 +15,7 @@ namespace dll{//cn_edu_chzu_dxxy_se16
 	public:
 		Calculator(double num1,char op,double num2);  // 构造函数
 		Calculator(char op, double num2);  // 构造函数重载
-		double	add ();				    // 加运算函数
+		double add ();				    // 加运算函数
 		double sub ();				    // 减运算函数
 		double mlt ();				    // 乘运算函数
 		double div ();				    // 除运算函数

@@ -20,7 +20,7 @@ int main () {
 	//cout <<"计算结果为："<< cacl5.calChoose_exp() << endl;
 	cout <<"计算结果为："<< cacl5.calChoose_exp1() << endl;
 	
-	try{					// 检测
+	try{// 检测
 		Calculator cacl5 (2,'/',0);		// 测试被0除操作
 		cout << "计算结果为："<< cacl5.calChoose_exp2() << endl;
 	}
@@ -137,7 +137,7 @@ int main () {
 	/**/
 	{
 		std::cout << "\n\n任意多算式5：重复结构do-while\n";
-		try {			std::cout << "请输入被操作数和操作符：";			std::cin >> result >> op;			//while (std::cin >> op, op != '=') {			do{				std::cout << "请输入操作数:" << std::endl;				std::cin >> number2;				Calculator cal555(result,op, number2);				result = cal555.Calculate();				std::cout << "此步骤计算结果：" << result << std::endl;				std::cout << "请输入操作符:" << std::endl;			} while (std::cin >> op, op != '=');//有分号
+		try {			std::cout << "请输入被操作数和操作符：";			std::cin >> result >> op;			/*while (std::cin >> op, op != '=') {*/			do{				std::cout << "请输入操作数:" << std::endl;				std::cin >> number2;				Calculator cal555(result,op, number2);				result = cal555.Calculate();				std::cout << "此步骤计算结果：" << result << std::endl;				std::cout << "请输入操作符:" << std::endl;			} while (std::cin >> op, op != '=');//有分号
 		}
 		catch (DivideByZero) {
 			std::cout << "除数为0！" << std::endl;
@@ -151,7 +151,7 @@ int main () {
 		std::cout << "最后计算结果：" << result << std::endl;
 	}
 	
-	system("pause");
+	system("pause");//暂停，避免直接退出系统，方便观察结果
 
 	return 0;
 }

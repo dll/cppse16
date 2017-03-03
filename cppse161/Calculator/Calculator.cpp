@@ -13,7 +13,7 @@ Calculator::Calculator(char op, double num2) {	// 构造函数重载的实现：连算
 	operat = op;
 	operand2 = num2;
 }
-double Calculator::result = 0;
+double Calculator::result = 0;//静态变量，在类/函数外部赋值
 
 double Calculator::add ()  { 		// 加运算函数的实现
 	return operand1 + operand2; 
@@ -30,7 +30,7 @@ double Calculator::div ()	 {		// 除运算函数的实现
 		throw DivideByZero();	// 抛掷0除异常
 	return operand1 / operand2; 
 }
-
+//ifelse判断结构
 double Calculator::calChoose_ie() {
 	if (operat =='+')
 		return add ();
@@ -45,6 +45,7 @@ double Calculator::calChoose_ie() {
 		exit (1);
 	}
 }
+//switchcase判断结构
 double Calculator::calChoose_sc() {
 	switch (operat)  {
 	case '+':
@@ -57,10 +58,10 @@ double Calculator::calChoose_sc() {
 		return div ();break;
 	default:
 		std::cout << "\n操作符输入错误!";
-		exit (1);
+		exit (0);//正常退出，返回OS
 	}
 }
-
+//异常处理
 double Calculator::calChoose_exp() {
 	switch (operat)  {
 	case '+':
