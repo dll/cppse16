@@ -75,7 +75,7 @@ double Calculator::calChoose_exp() {
 			if(operand2 == 0)
 				throw -1;	// 抛掷0除异常，用一个整数表示
 			else{
-				return div ();break;
+				return div ();
 			}
 		}
 		catch (double){			// 捕获整数类型异常
@@ -189,8 +189,7 @@ double Calculator::calChoose_exp5() {
 		throw;				// 再次抛掷
 	}
 }
-/*
-double Calculator::Calculate(){
+double Calculator::Calculate0(){
 	try {
 		switch (operat) {
 		case '+':
@@ -208,7 +207,7 @@ double Calculator::Calculate(){
 	catch (OperationTypeNoExist) {
 		throw;
 	}
-}*/
+}
 
 double Calculator::Calculate() {
 	//static double result = operand1;

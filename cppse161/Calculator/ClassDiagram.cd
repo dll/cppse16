@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="dll::Calculator">
+    <Position X="2.75" Y="0.5" Width="4" />
+    <TypeIdentifier>
+      <HashCode>AAAgBAAAICAQAAEQRIAKAAgAACAAAAAAgAAAAAAKBAA=</HashCode>
+      <FileName>Calculator.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dll::DivideByZeroException">
+    <Position X="7.25" Y="0.5" Width="3.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAQAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>Exception.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dll::DivideByZero">
+    <Position X="7.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exception.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="dll::OperationTypeNoExist">
+    <Position X="7.25" Y="2.5" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exception.hpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>

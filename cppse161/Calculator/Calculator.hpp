@@ -15,14 +15,15 @@ namespace dll{//cn_edu_chzu_dxxy_se16
 	public:
 		Calculator(double num1,char op,double num2);  // 构造函数
 		Calculator(char op, double num2);  // 构造函数重载
-		double add ();				    // 加运算函数
-		double sub ();				    // 减运算函数
-		double mlt ();				    // 乘运算函数
-		double div ();				    // 除运算函数
+		double add ();	// 加运算函数
+		double sub ();	// 减运算函数
+		double mlt ();	// 乘运算函数
+		double div ();	// 除运算函数
 		double calChoose_ie();	// 选择操作类型
 		double calChoose_sc();	// 选择操作类型
+		double Calculate0();//选择操作类型
 		double Calculate();//选择操作类型
-		
+
 		double calChoose_exp();//在同一个函数中抛掷与处理
 		double calChoose_exp1();//将抛掷异常与检测处理放在不同函数中
 		double calChoose_exp2();//多次抛掷异常
