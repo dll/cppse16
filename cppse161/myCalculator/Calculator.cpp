@@ -6,42 +6,14 @@ Calculator::Calculator(double num1, char oper, double num2) {
 	myOperator = oper;
 	operand2 = num2;
 }
-
-double Calculator::Add() {
-	return operand1 + operand2;
-}
-double Calculator::Sub() {
-	return operand1 - operand2;
-}
-
-double myCalculator::Calculator::Mod()//添加名字空间myCalculator
-{
-	return int(operand1) % int(operand2);
-}
-/*
-5.85
-0.43
-1
-1.5
-依次输入被操作数，操作符，操作数
-6 / 0
-inf
-请按任意键继续. . .
-*/
-double myCalculator::Calculator::Div()
-{
-	//异常处理与逻辑代码混杂
-	//if (operand2 == 0) {
-	//	std::cout << "除数不能为零!" << std::endl;
-	//	system("pause");
-	//	exit(0);
-	//}
-	//else
+double Calculator::Add() {	return operand1 + operand2;}
+double Calculator::Sub() {	return operand1 - operand2;}
+double myCalculator::Calculator::Mod(){	return int(operand1) % int(operand2);}
+double myCalculator::Calculator::Div(){
 	if (operand2 == 0)
 		throw DivideByZeroException();
 	return operand1 / operand2;
 }
-
 double Calculator::Calculate() {
 	//if (myOperator == '+')//一种情况/单分支：加法
 	if (myOperator == '+')//两种情况/双分支：加或减

@@ -132,12 +132,12 @@ int main () {
 			std::cout << "出现其它异常！" << std::endl;
 		}
 		std::cout << "计算结果：" << result << std::endl;
-	}
-	*/
-
+	}*/
+	
+	/**/
 	{
 		std::cout << "\n\n任意多算式5：重复结构do-while\n";
-		try {			std::cout << "请输入一个算式：";			std::cin >> result >> op;			//while (std::cin >> op, op != '=') {			do{				std::cin >> number2;				Calculator cal555(result,op, number2);				result = cal555.Calculate();				std::cout << "计算结果：" << result << std::endl;			} while (std::cin >> op, op != '=');//有分号
+		try {			std::cout << "请输入被操作数和操作符：";			std::cin >> result >> op;			//while (std::cin >> op, op != '=') {			do{				std::cout << "请输入操作数:" << std::endl;				std::cin >> number2;				Calculator cal555(result,op, number2);				result = cal555.Calculate();				std::cout << "此步骤计算结果：" << result << std::endl;				std::cout << "请输入操作符:" << std::endl;			} while (std::cin >> op, op != '=');//有分号
 		}
 		catch (DivideByZero) {
 			std::cout << "除数为0！" << std::endl;
@@ -148,7 +148,7 @@ int main () {
 		catch (...) {
 			std::cout << "出现其它异常！" << std::endl;
 		}
-		std::cout << "计算结果：" << result << std::endl;
+		std::cout << "最后计算结果：" << result << std::endl;
 	}
 	
 	system("pause");

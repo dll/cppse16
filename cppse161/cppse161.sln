@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Point", "Point\Point.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "myCalculator", "myCalculator\myCalculator.vcxproj", "{77FE2CB7-0A1B-4F44-AE94-E75604EE4627}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dowhile", "dowhile\dowhile.vcxproj", "{BB255433-4320-413C-8F69-B4B698CF092D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,16 @@ Global
 		{77FE2CB7-0A1B-4F44-AE94-E75604EE4627}.Release|x64.Build.0 = Release|x64
 		{77FE2CB7-0A1B-4F44-AE94-E75604EE4627}.Release|x86.ActiveCfg = Release|Win32
 		{77FE2CB7-0A1B-4F44-AE94-E75604EE4627}.Release|x86.Build.0 = Release|Win32
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Debug|x64.ActiveCfg = Debug|x64
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Debug|x64.Build.0 = Debug|x64
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Debug|x86.ActiveCfg = Debug|Win32
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Debug|x86.Build.0 = Debug|Win32
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|Any CPU.ActiveCfg = Release|Win32
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x64.ActiveCfg = Release|x64
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x64.Build.0 = Release|x64
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x86.ActiveCfg = Release|Win32
+		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
