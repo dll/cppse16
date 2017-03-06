@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Point", "Point\Point.vcxpro
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dowhile", "dowhile\dowhile.vcxproj", "{BB255433-4320-413C-8F69-B4B698CF092D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PrimeGenerator", "PrimeGenerator\PrimeGenerator.vcxproj", "{62866D6A-9597-4425-86B3-6B5E625D2C0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,6 +63,16 @@ Global
 		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x64.Build.0 = Release|x64
 		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x86.ActiveCfg = Release|Win32
 		{BB255433-4320-413C-8F69-B4B698CF092D}.Release|x86.Build.0 = Release|Win32
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Debug|Any CPU.ActiveCfg = Debug|Win32
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Debug|x64.ActiveCfg = Debug|x64
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Debug|x64.Build.0 = Debug|x64
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Debug|x86.ActiveCfg = Debug|Win32
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Debug|x86.Build.0 = Debug|Win32
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Release|Any CPU.ActiveCfg = Release|Win32
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Release|x64.ActiveCfg = Release|x64
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Release|x64.Build.0 = Release|x64
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Release|x86.ActiveCfg = Release|Win32
+		{62866D6A-9597-4425-86B3-6B5E625D2C0C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
