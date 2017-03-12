@@ -7,7 +7,7 @@ Time::Time(int hours, int minutes, int seconds) {
 	this->minutes = minutes;
 	this->seconds = seconds;
 }
-void Time::display() {
+void Time::Display() {
 	cout << setw(2) << setfill('0') << this->hours << ":" << setw(2) << this->minutes << ":" << setw(2) << seconds << endl;
 }
 

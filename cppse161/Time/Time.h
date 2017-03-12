@@ -13,11 +13,11 @@ private:
 	int seconds;//秒
 
 public:
-	Time() {}
-	Time(int hours, int minutes, int seconds);//构造函数
+	Time() {}//无参构造函数
+	Time(int hours, int minutes, int seconds);//全部参数构造函数
 	Time(const string& s);//转换构造函数，XX:XX:XX字符串转换成时分秒
 
-	void display();//显示时间
+	void Display();//显示时间
 
 	//友元函数实现：友元函数可以访问类的私有成员
 	friend Time operator + (const Time &t1, const Time &t2);	// 友元函数声明
