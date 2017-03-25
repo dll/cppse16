@@ -33,7 +33,17 @@ int main(int argc, char** argv) {
 	ifstream ifs1("Manager.txt");
 	while(ifs1>>n>>a>>g>>w>>s>>p){
 		Manager man(n,a,g,w,s,p);
-		man.Output();
+		//man.Output();
+		//赋值兼容规则
+		Person p=man;//隐式转换，向上
+//		p.Output();
+//		Person &rp=man;
+//		rp.Output();
+//		Person *pp=&man;
+//		pp->Output();
+		
+		Employee &emp=static_cast<Employee&>(p);//显式转换，向下
+		emp.Output();
 	}
 
 	ifs1.close();
