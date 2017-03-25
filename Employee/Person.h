@@ -7,14 +7,14 @@ using namespace std;
 
 class Person {
 private:
-	std::string name;
+	string name;
 	int age;
 	char gender;
 protected:
 public:
-	Person(std::string, int, char);	
+	Person(string, int, char);	
 	void Output();
-	std::string getName() const{return name;}
+	string getName() const{return name;}//inline内联函数，性能好
 	int getAge() const {return age;}
 	char getGender() const{return gender;}
 };
