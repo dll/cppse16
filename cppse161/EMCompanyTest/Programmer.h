@@ -13,7 +13,7 @@ protected:
 public:
 	Programmer() {}
 	void getPay();
-	//void getBonus();
+	void getBonus();
 };
 
 #endif
