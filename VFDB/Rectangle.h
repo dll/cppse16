@@ -1,7 +1,9 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 #include<iostream>
-class Rectangle {
+#include"Draw.h"
+
+class Rectangle:public Draw {
 private:
 protected:
 public:

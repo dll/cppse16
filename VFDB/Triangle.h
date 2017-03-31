@@ -1,7 +1,9 @@
 #ifndef TRIANGLE_H
 #define TRIANGLE_H
 #include<iostream>
-class Triangle {
+#include"Draw.h"
+
+class Triangle:public Draw {
 private:
 protected:
 public:

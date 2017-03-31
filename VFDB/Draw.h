@@ -9,7 +9,7 @@ protected:
 public:
 	Draw();
 	~Draw();
-	virtual void doDraw ();//纯虚函数：不能创建对象实例，只能声明引用和指针类型
+	virtual void doDraw ()=0;//纯虚函数：不能创建对象实例，只能声明引用和指针类型
 };
 
 #endif
