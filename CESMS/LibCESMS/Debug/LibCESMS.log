@@ -1,0 +1,10 @@
+﻿  stdafx.cpp
+  dllmain.cpp
+  Programmer.cpp
+  Manager.cpp
+  LibCESMS.cpp
+  Employee.cpp
+  正在生成代码...
+    正在创建库 C:\Users\dll\Desktop\2017\《C++程序设计》\cppse161\CESMS\Debug\LibCESMS.lib 和对象 C:\Users\dll\Desktop\2017\《C++程序设计》\cppse161\CESMS\Debug\LibCESMS.exp
+  LibCESMS.vcxproj -> C:\Users\dll\Desktop\2017\《C++程序设计》\cppse161\CESMS\Debug\LibCESMS.dll
+  LibCESMS.vcxproj -> C:\Users\dll\Desktop\2017\《C++程序设计》\cppse161\CESMS\Debug\LibCESMS.pdb (Full PDB)
