@@ -1,9 +1,9 @@
 #ifndef CIRCLE_H
 #define CIRCLE_H
 #include<iostream>
-#include"Draw.h"
+#include"Shape.h"
 
-class Circle :public Draw{
+class Circle :public Shape {
 private:
 protected:
 public:

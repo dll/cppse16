@@ -9,4 +9,4 @@ Draw::Draw() {
 Draw::~Draw() {
 	
 }
-void Draw::doDraw () { 			// 定义虚函数	cout << "不画图形\n";}
+//void Draw::doDraw () { // 定义虚函数//	cout << "不画图形\n";//}

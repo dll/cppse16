@@ -1,9 +1,9 @@
 #ifndef RECTANGLE_H
 #define RECTANGLE_H
 #include<iostream>
-#include"Draw.h"
+#include"Shape.h"
 
-class Rectangle:public Draw {
+class Rectangle:public Shape {
 private:
 protected:
 public:
