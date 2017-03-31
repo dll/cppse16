@@ -15,7 +15,8 @@ private:
 protected:
 public:
 	Programmer();
-	void getPay();
+	void getPay();//9000
+	void getBonus();//»ùÐ½+½±½ð
 };
 
 #endif

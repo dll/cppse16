@@ -53,10 +53,16 @@
     <ClCompile Include="Company.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Programmer1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="lib\LibCESMS.lib">
       <Filter>lib</Filter>
     </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
