@@ -1,12 +1,14 @@
 #ifndef EMPLOYEE_H
 #define EMPLOYEE_H
+
 #include<iostream>
 
-class Employee {
+class  Employee {
 private:
 protected:
 public:
-	virtual int getPay();//获得工资
+	Employee() {}
+	virtual void getPay()=0;//获得工资
 };
 
 #endif

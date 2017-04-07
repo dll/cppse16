@@ -9,7 +9,7 @@ using namespace std;
 
 void Company::payroll(Employee &re){
 	//老的计算工资的方法
-	//re.getPay();
+//	re.getPay();
 	try{
 		Programmer &rp=dynamic_cast<Programmer&>(re);
 		rp.getBonus();//发给程序员的工资

@@ -34,7 +34,7 @@ int main (int argc, char *argv[]) {
 
 void TestvFunc(){
 	Circle c1;
-	//Draw dr = c1;
+//	Draw dr = c1;
 	Shape s=c1;
 	cout <<  "使用对象:" ;s.doDraw ();
 	Circle c2;
@@ -48,7 +48,7 @@ void TestonDraw(){
 	int choice;
 	Circle c;
 	Rectangle r;
-	Triangle t;	Draw *pd = NULL;	cout << "1——圆；2——矩形；3——三角形。请选择：";	cin >> choice;	switch (choice){		case 1 : 			pd = &c;			break;		case 2 : 						pd = &r;			break;		case 3 : 						pd = &t;			break;
+	Triangle t;	Draw *pd =nullptr;	cout << "1——圆；2——矩形；3——三角形。请选择：";	cin >> choice;	switch (choice){		case 1 : 			pd = &c;			break;		case 2 : 						pd = &r;			break;		case 3 : 						pd = &t;			break;
 		default:
 			cout<<"输入选择1，2，3错误！"<<endl;
 			system("pause");

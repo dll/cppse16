@@ -1,0 +1,11 @@
+EXPORTS
+    _ZN10Programmer6getPayEv @1
+    _ZN7Manager6getPayEv @2
+    _ZTI10Programmer @3 DATA
+    _ZTI7Manager @4 DATA
+    _ZTI8Employee @5 DATA
+    _ZTS10Programmer @6 DATA
+    _ZTS7Manager @7 DATA
+    _ZTS8Employee @8 DATA
+    _ZTV10Programmer @9 DATA
+    _ZTV7Manager @10 DATA

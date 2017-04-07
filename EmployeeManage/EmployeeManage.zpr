@@ -17,11 +17,11 @@ current_source=Employee.h
 path_char=\
 [source]
 path=Employee.cpp
-cursor=7:0
+cursor=6:3
 open=true
 [source]
 path=Manager.cpp
-cursor=5:25
+cursor=6:1
 open=true
 [source]
 path=Programmer.cpp
@@ -29,7 +29,7 @@ cursor=7:0
 open=true
 [header]
 path=Employee.h
-cursor=3:18
+cursor=9:14
 open=true
 [header]
 path=Manager.h
@@ -37,11 +37,11 @@ cursor=10:12
 open=true
 [header]
 path=Programmer.h
-cursor=2:0
+cursor=10:1
 open=true
 [config]
 name=Debug
-toolchain=
+toolchain=gcc5-mingw32
 toolchain_argument_0=${DEFAULT}
 toolchain_argument_1=${DEFAULT}
 toolchain_argument_2=${DEFAULT}
@@ -62,9 +62,9 @@ compiling_extra=
 macros=_DEBUG
 warnings_level=1
 warnings_as_errors=0
-pedantic_errors=0
+pedantic_errors=1
 std_c=
-std_cpp=
+std_cpp=c++1z
 debug_level=2
 optimization_level=0
 enable_lto=0
@@ -79,9 +79,9 @@ dont_generate_exe=1
 libname=EmployeeManage
 path=Debug
 sources=Employee.cpp Manager.cpp Programmer.cpp
-extra_link=
+extra_link=-Wl,--output-def,EmployeeManage.def,--out-implib,EmployeeManage.lib
 is_static=0
-default_lib=0
+default_lib=1
 do_link=1
 [config]
 name=Release
