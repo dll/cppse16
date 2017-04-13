@@ -17,7 +17,7 @@ public:
 	void getPrimeSequence();
 	bool isPrime(int number);
 	void printPrime();
-	void savePrime();
+	friend void savePrime(const PrimeGenerator &pg);
 };
 
 PrimeGenerator::PrimeGenerator(int l, int u)
@@ -86,16 +86,16 @@ void PrimeGenerator::printPrime() {
 	}
 	cout << endl;
 }
-void PrimeGenerator::savePrime() {
+void savePrime(const PrimeGenerator &pg) {
 	string saveprimefilename = "saveprime.txt";
 	ofstream out(saveprimefilename.c_str());	// 创建输出流并打开文件            
 	if (!out) {
 		cerr << "不能打开saveprime文件！\n";
 		exit(0);
 	}
-	out << lowernum << " " << uppernum << endl;
-	for (int i = 0; i < count; i++) {
-		out << setw(3) << arraySavePrimes[i] << " ";
+	out << pg.lowernum << " " << pg.uppernum << endl;
+	for (int i = 0; i < pg.count; i++) {
+		out << setw(3) << pg.arraySavePrimes[i] << " ";
 	}
 	out << endl;
 	out.close();
@@ -117,7 +117,7 @@ int main(int argc, char *argv[]) {
 	pg.getPrimeSequence();
 	pg.printPrime();
 
-	pg.savePrime();
+	savePrime(pg);
 	system(readprimefilename.c_str());
 
 	return 0;
