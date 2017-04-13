@@ -1,0 +1,86 @@
+1,¸´Ï°´´½¨SE161CPP¶¯Ì¬Á´½Ó¿â£¬PrimeGeneratorÀàËØÊıÉú³ÉÆ÷
+2,¸´Ï°´´½¨SE161CPPTestÏîÄ¿£¬ÀûÓÃPrimeGenerator.dll
+3,console cin ÊäÈë
+	cout<<"ÇëÊäÈë¿ªÊ¼ºÍ½áÊøµÄÇø¼ä£º"<<endl;
+	cin>>low>>up;
+4,·´¸´²âÊÔÊäÈë²»Í¬Çø¼ä
+	while(cin>>low>>up){
+		PrimeGenerator pg(low,up);
+		pg.GetPrimeSequence();
+		cout<<"ÇëÊäÈë¿ªÊ¼ºÍ½áÊøµÄÇø¼ä(·ÇÕûÊıÍË³ö)£º"<<endl;
+	}
+5,²»ÊÖ¹¤ÊäÈëÊı¾İ£¬´ÓÎÄ¼ş¶ÁÈ¡
+   ifstream: input file stream
+   5.1,´´½¨ÎÄ¼şÁ÷ ifstream fin(pglowup.c_str());
+   5.2,´ò¿ªÎÄ¼ş£º¹¹Ôìº¯Êı¡¢open()
+   5.3,¶ÁĞ´low=1, up=10
+   5.4£¬¹Ø±ÕÎÄ¼şclose()
+	ifstream fin;
+	fin.open(pglowup.c_str(),ios::in);
+	if (!fin) {
+		std::cerr << "²»ÄÜ´ò¿ªprimegenerator.dataÎÄ¼ş!\n";
+		system("pause");
+		exit(0);
+	}
+	while(fin>>low>>up){
+		PrimeGenerator pg(low,up);
+		pg.GetPrimeSequence();
+	}
+	fin.close();
+6,Ğ´ÎÄ¼ş²Ù×÷
+	bool PrimeGenerator::SavePrimeSequence() {
+		6.1,2, ofstream fout("primesequence.result",ios::app);
+			if(!fout)
+				return false;
+		6.3	fout << lownum << " " << upnum<<endl;
+			for (int m = lownum; m <= upnum; m++) {	// Ñ­»·¿ØÖÆ
+				if (m < 2)
+					continue;// ¶ÌÂ·Ò»´ÎÑ­»·ÖĞºóÃæµÄ²¿·Ö
+				if (IsPrime(m)) {
+					fout << m << ", ";
+				}
+			}
+			fout<<endl;
+		6.4	fout.close();
+			return true;
+}
+7,Á÷´íÎó¼°Æä´¦Àí
+	while(cin.fail()){
+		cout<<"ÊäÈëÊı¾İÀàĞÍ´íÎó£¡\nÇëÖØĞÂÊäÈë"<<endl;
+		cin.clear();//ÇåÀí»º³åÖĞµÄÊı¾İÁ÷
+		cin.ignore(1024,'\n');//1024½Ú
+		cin>>low>>up;//ÖØĞÂÊäÈëÖ±µ½ÀàĞÍÒ»ÖÂ
+	}
+	
+8,ÉèÖÃÀà¿âµÄÊä³öÂ·¾¶,±ÜÃâ¸´ÖÆÕ³ÌùdllÎÄ¼ş£¡
+
+9,Ôö¼ÓÓĞÔªº¯Êı£¬È·±£lownum,upnum´óĞ¡¹ØÏµ¡
+friend void LowUpNumber(PrimeGenerator&pg);
+void LowUpNumber(PrimeGenerator&pg){
+	if(pg.lownum>pg.upnum){
+		unsigned temp=pg.lownum;
+		pg.lownum=pg.upnum;
+		pg.upnum=temp;
+	}
+}
+ÓĞÔªº¯ÊıÊÇ·Ç³ÉÔ±º¯Êı£¬²»ĞèÒªÌí¼ÓÀà×÷ÓÃÓòPrimeGenerator£º£º
+ÓÑÔªº¯ÊıÄÜ·ÃÎÊÀàµÄË½ÓĞÊı¾İ³ÉÔ±ºÍË½ÓĞ³ÉÔ±º¯Êı
+ÁíÍâ£¬C++ÖĞ£¬»¹ÓĞÒ»Àà·Ç³ÉÔ±º¯Êı£¬Èçmainº¯Êı²»ÊôÓÚÈÎºÎÀà£¬
+Ò²²»ÊÇÓĞÔªº¯Êı¡£ÕâÊÇC++¼æÈİCÓïÑÔµÄº¯Êı¹¦ÄÜµÄÔ­Òò
+
+10£¬Ôö¼ÓÓĞÔªÀà
+	friend class PrimerManager;
+void PrimerManager::SavePrimerToFile(PrimeGenerator &pg){
+	ofstream fout("prime.save",ios::out);
+	if(typeid(pg)==typeid(saPrimeGenerator)){
+		saPrimeGenerator &saPG=static_cast<saPrimeGenerator&>(pg);
+		for(int i=0;i<saPG.GetCount();i++)
+			fout<<saPG.StaticArrayPG[i]<<" ";
+	}
+	else{
+		daPrimeGenerator &daPG=static_cast<daPrimeGenerator&>(pg);
+		for(int i=0;i<daPG.GetCount();i++)
+			fout<<daPG.dynamicArrayPG[i]<<" ";
+	}
+	fout.close();
+}
