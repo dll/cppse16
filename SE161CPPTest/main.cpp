@@ -5,6 +5,11 @@
 #include"PrimerManager.h"
 #include"saPrimeGenerator.h"
 #include"daPrimeGenerator.h"
+#include"max.h"
+#include"ArrayTmp.hpp"
+#include "BoundArrayTmp.hpp"
+
+#include<ctime>
 
 using namespace std;
 
@@ -44,11 +49,56 @@ int main (int argc, char *argv[]) {
 //	saPrimeGenerator saPG(100,1);
 //	saPG.PrintPrime();
 	
-	daPrimeGenerator daPG(100,1);
-	daPG.PrintPrime();
+//	daPrimeGenerator daPG(100,1);
+//	daPG.PrintPrime();
+//	
+//	PrimerManager pm;
+//	pm.SavePrimerToFile(daPG);
 	
-	PrimerManager pm;
-	pm.SavePrimerToFile(daPG);
+//	cout<<myMax(10,8)<<endl;
+//	cout<<myMax(10,18)<<endl;
+//	cout<<myMax('a', 'b')<<endl;// myMax<char>////	cout<<myMax(56, 'b')<<endl;// error: no matching function for call to 'myMax(int, char)'
+//	cout<<myMax(10,18,3)<<endl;
+	
+	ArrayTmp <int>  IntAry( 5 ) ;	for (int i = 0; i < 5; i ++ )  IntAry.set ( i, i ) ;
+	IntAry.display();	cout << "Integer Array : \n" ;	for (int i = 0; i < 5; i ++ )  cout << IntAry.get(i) << endl ;		ArrayTmp <double> DouAry( 5 ) ;	for (int i = 0; i < 5; i ++ )  DouAry.set ( i, (i+1)*0.35 ) ;	cout << "Double Array : \n" ;	for (int i = 0; i < 5; i ++ )  cout << DouAry.get(i) << '\t' ;	cout<<endl;	
+	ArrayTmp <int>  IntAry1( 5 ) ;
+	IntAry1=IntAry;
+	cout << "ArrayTmp IntAry1: \n" ;
+	for (int i = 0; i < 8; i ++ )  cout << IntAry1.get(i) << endl ;
+	
+	BoundArrayTmp <int>  IntAry2(0,4) ;
+	for (int i = 0; i < 5; i ++ )  IntAry2.set ( i, i ) ;
+	cout<<"First Element of BoundArrayTmp IntAry2:"<<IntAry2.begin()<<endl;
+	cout<<"Last Element of BoundArrayTmp IntAry2:"<<IntAry2.end()<<endl;
+	cout << "BoundArrayTmp IntAry2: \n" ;
+	IntAry2.display();
+	//IntAry2.deleteElement(3);//
+	IntAry2.display();
+//	IntAry2.resize(5);
+//	IntAry2.set(4,44);
+	IntAry2.insertElement(2,11);
+	IntAry2.display();
+//	for (int i = 0; i < 8; i ++ )  cout << IntAry2.get(i) << endl ;
+//	
+//	BoundArrayTmp <int>  IntAry3(1,5) ;
+//	BoundArrayTmp <int>  IntAry4(0,40) ;
+//	IntAry3=IntAry2;
+//	IntAry4=IntAry2;
+//	cout << "BoundArrayTmp IntAry4: \n" ;
+//	for (int i = 0; i < 8; i ++ )  cout << IntAry4.get(i) << endl ;
+	
+	srand( (unsigned)time( NULL ) );
+	IntAry2.deleteElement(rand()%IntAry2.size);
+	IntAry2.display();
+
+	BoundArrayTmp <int>  IntAry5(0,9) ;
+	cout << "Random BoundArrayTmp IntAry5: \n" ;
+	for (int i = 0; i < 10; i ++ )  
+		IntAry5.set(i,rand()%100) ;
+	IntAry5.display();
+	IntAry5.selectSort();
+	IntAry5.display();
 	
 	return 0;
 }

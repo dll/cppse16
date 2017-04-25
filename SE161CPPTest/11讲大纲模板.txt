@@ -1,0 +1,58 @@
+1,myMax函数重载
+	int myMax ( int a , int b ) { return ( a > b ) ? a , b ; }
+	//...long ,double,char,自定义类型
+	cout<<myMax(10,8)<<endl;
+2,宏函数
+	# define myMax ( a , b ) ( a > b ? a : b）   
+3,函数模板
+//函数模板
+template < typename  T >
+T  myMax ( T  a , T  b )
+{ return  a > b ? a : b ; }
+4,重载函数模板,调用普通函数还是模板函数？
+//重载函数模板
+template <typename T>
+T myMax( const T a, const T b , const T c)
+{ T t ;  t = myMax(a, b) ;    return myMax ( t, c ) ;  }
+
+int myMax ( int a , int b ) { return ( a > b ) ? a , b ; }
+5,类模板实际上是函数模板的推广
+类模板用于实现类所需数据的类型参数化
+template< typename T >
+class  ArrayTmp{
+	public :
+		ArrayTmp ( int s ) ;
+		~ ArrayTmp () ;
+		const T& get( int index ) const ;
+		void set( int index, const T & value ) ;
+		T& operator[ ] (int index) ; //重载[]
+
+		ArrayTmp<T>& operator=( const ArrayTmp<T> & a );//重载=，类模板作参数
+	
+		void display()const;
+	protected: 
+		int size;
+		T * element;
+} ;
+6,类模板继承
+template < typename T >
+class BoundArrayTmp : public ArrayTmp<T> {
+	public :
+		using ArrayTmp<T>::size;//using声明使用基类模板成员
+//		using ArrayTmp<T>::element;
+		BoundArrayTmp ( int low = 0, int height = 1 ) ;
+		
+		const T& get( int index ) const ;
+		void set( int index, const T & value ) ;
+		T& operator[ ] (int index) ; 
+		
+		BoundArrayTmp & operator=(BoundArrayTmp & a);
+		~BoundArrayTmp();
+		void resize(int sz);
+		
+	private:   
+		int  min;
+};
+  6.1 using声明使用基类模板成员，编译时检查
+  6.2 this->this指针，编译时检查
+  6.3 BaseClass::使用显示修饰(explicit qualification),不推荐, 显示修饰会屏蔽virtual的动态绑定

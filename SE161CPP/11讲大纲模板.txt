@@ -1,0 +1,18 @@
+1,myMax函数重载
+	int myMax ( int a , int b ) { return ( a > b ) ? a , b ; }
+	//...long ,double,char,自定义类型
+	cout<<myMax(10,8)<<endl;
+2,宏函数
+	# define myMax ( a , b ) ( a > b ? a : b）   
+3,函数模板
+//函数模板
+template < typename  T >
+T  myMax ( T  a , T  b )
+{ return  a > b ? a : b ; }
+4,重载函数模板,调用普通函数还是模板函数？
+//重载函数模板
+template <typename T>
+T myMax( const T a, const T b , const T c)
+{ T t ;  t = myMax(a, b) ;    return myMax ( t, c ) ;  }
+
+int myMax ( int a , int b ) { return ( a > b ) ? a , b ; }
