@@ -1,12 +1,12 @@
-1,myMax函数重载
+1,myMax函数重载:多个函数，繁杂
 	int myMax ( int a , int b ) { return ( a > b ) ? a , b ; }
 	//...long ,double,char,自定义类型
 	cout<<myMax(10,8)<<endl;
-2,宏函数
+2,宏函数：不对a,b进行类型检查
 	# define myMax ( a , b ) ( a > b ? a : b）   
 3,函数模板
 //函数模板
-template < typename  T >
+template<typename T>//模板说明，T是未知类型，类型多态,类似弱类型语言
 T  myMax ( T  a , T  b )
 { return  a > b ? a : b ; }
 4,重载函数模板,调用普通函数还是模板函数？
@@ -34,6 +34,8 @@ class  ArrayTmp{
 		int size;
 		T * element;
 } ;
+//溢出：访问不在数组大小范围内的空间，输出随机垃圾值
+
 6,类模板继承
 template < typename T >
 class BoundArrayTmp : public ArrayTmp<T> {
@@ -56,3 +58,7 @@ class BoundArrayTmp : public ArrayTmp<T> {
   6.1 using声明使用基类模板成员，编译时检查
   6.2 this->this指针，编译时检查
   6.3 BaseClass::使用显示修饰(explicit qualification),不推荐, 显示修饰会屏蔽virtual的动态绑定
+
+实验内容：
+1，函数模板：Swap
+2，类模板：Stack

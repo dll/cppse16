@@ -10,9 +10,10 @@ class BoundArrayTmp : public ArrayTmp<T> {
 		
 		const T& get( int index ) const ;
 		void set( int index, const T & value ) ;
-		T& operator[ ] (int index) ; 
+		T& operator[] (int index) ; 
 				BoundArrayTmp & operator=(BoundArrayTmp & a);
 		~BoundArrayTmp();
+		
 		void resize(int sz);
 		T begin()const;//第一个元素
 		T end()const;//最后一个元素
