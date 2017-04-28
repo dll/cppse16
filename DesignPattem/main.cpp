@@ -1,11 +1,12 @@
 #include<iostream>
 #include"DrawFactory.h"
+#include "Singleton.h"
 
 using namespace std;
 
 class Menu{
 public:
-	Menu(){}
+//	Menu(){}
 	
 	void showMainMenu(){
 		cout<<"\n设计模式演示"<<endl;
@@ -13,17 +14,21 @@ public:
 		do {												
 			cout <<"\n1:简单工厂模式\n\
 				    \n2:工厂方法模式\n\
-					\n请选择（1~2）,0 退出"<<endl;	
+					\n3:单例模式\n\
+					\n4:XXX\n\
+					\n请选择（1~4）,0 退出"<<endl;	
 			cin >> mainchoice;
 			switch(mainchoice){
 				case 1:showSimpleFactory();break;
 				case 2:showFactoryMethod();break;
+				case 3:showSingleton();break;
+				case 4:showXXX(); break;
 				case 0:exit(0);
 				default:cout<<"输入错误！"<<endl;
 			}
 			system("cls");
 			cout<<"\n设计模式演示"<<endl;
-		}while (mainchoice <3 && mainchoice > -1);
+		}while (mainchoice <4 && mainchoice > -1);
 	}	
 	void showSimpleFactory(){
 		cout<<"\n***简单工厂模式***\n"<<endl;
@@ -54,11 +59,25 @@ public:
 			pdf -> MakeDrawer () -> draw (); // 调用工厂方法 生成画图对象画图
 		}
 	}
+	void showSingleton(){
+		Singleton *s1=Singleton::getSingleton();
+		cout<<"s1地址"<<s1<<endl;
+		Singleton *s2=Singleton::getSingleton();
+		cout<<"s2地址"<<s2<<endl;
+		if(s1==s2)
+			cout<<"只能实例化一个对象"<<endl;
+		system("pause");
+	}
+	//4.
+	void showXXX(){
+		cout<<"请添加第四个演示"<<endl;
+		system("pause");
+	}
 };
 
 class DesignPatternDemo{
 public:
-	DesignPatternDemo(){	}
+	//DesignPatternDemo(){}
 	void DesignPatternDemoMenu(){
 		Menu *mainMenu=new Menu();
 		mainMenu->showMainMenu();
