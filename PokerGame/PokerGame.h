@@ -8,7 +8,7 @@ class PokerGame {
 		int playerNumber;
 		int eachCards;
 	public:
-		PokerGame(int,int);// 用玩家数、每人牌数初始化
+		PokerGame(int p=4,int e=12);// 用玩家数、每人牌数初始化
 		void shuffle ();
 		void cardsSort();
 		void sendCards ();

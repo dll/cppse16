@@ -16,7 +16,7 @@ current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=114:12
+cursor=9:1
 open=true
 [other]
 path=readprime.txt

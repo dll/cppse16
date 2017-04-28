@@ -17,7 +17,7 @@ current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=11:16
+cursor=6:0
 open=true
 [source]
 path=Josephus.cpp
