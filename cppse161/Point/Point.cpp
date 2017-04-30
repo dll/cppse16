@@ -23,3 +23,10 @@ Point::Point(Point & p) {
 	this->pX = p.pX;
 	this->pY = p.pY;
 }
+
+bool Point::isEqual(const Point& p) {
+	if (this->pX == p.pX && this->pY == p.pY)
+		return true;
+	else
+		return false;
+}

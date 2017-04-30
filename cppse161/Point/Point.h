@@ -19,4 +19,6 @@ class Point {
 
 		Point(std::string name, float x, float y);//创建类对象
 		void ShowPoint();//显示对象
+		//cpp unit test 
+		bool isEqual(const Point &p);
 };
