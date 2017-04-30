@@ -20,6 +20,8 @@ int main()
 	p.getPay();//当p变化后，使用基类指针，动态转换，得到变化结果“基薪+奖金”
 	//p.getBonus();
 
+	Company c;
+
     return 0;
 }
 /*
