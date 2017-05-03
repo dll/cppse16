@@ -1,0 +1,8 @@
+#include <iostream>#include <algorithm>#include <list>	
+#include <functional>
+							// 定义函数对象template<class T>struct AbsoluteLess : public std::binary_function<T,T,bool> {	bool operator () (T x ,T y) const	{  return abs (x) > abs (y); }};// 定义冒泡排序函数模板template<class T,class CompareType>void Bubble_Sort (T* p,int size,const CompareType& Compare) {	for (int i = 0; i < size; ++ i) {		for (int j = i + 1; j < size; ++ j){			if (Compare (p[i],p[j])) {				const T temp = p[i];				p[i] = p[j];				p[j] = temp;				}		}	}}// 定义显示函数模板template<class T>void Display (T* p1,T* p2) {	for (T* p = p1; p < p2; ++ p)		std::cout << *p << ",";	std::cout << std::endl;}int main () {//	char a[] ="abcdefghijk";//c语言，abcdefghijk\0
+//	int n=sizeof(a)/sizeof(a[0]);//	std::list<char> aList;//	//	for (int i = 0; i < n; ++ i)//		aList.push_back (a[i]);//	std::list<char>::iterator  iter;	// 声明一个输出迭代器//	for (iter = aList.begin (); iter != aList.end ();iter ++)//		std::cout << *iter << ",";//	std::cout<< n <<"\n";
+	
+	double a[7] = {-7.77,-8.88,55.5,33.3,77.7,-11.1,22.2};	int size = sizeof (a)/sizeof (double);
+	//c++1X
+	for( auto x : a ) {  // 用auto关键字推断元素类型		std::cout << x << " ";	}	Bubble_Sort (a, size, std::greater<double> ());	// 使用预定义函数对象(STL)	std::cout << "\n按照自然值排序：";	Display (a, a + size);         	Bubble_Sort (a, size, AbsoluteLess<double> ());// 使用自定义函数对象	std::cout << "按照绝对值排序：";	Display (a, a + size);	return 0;}
