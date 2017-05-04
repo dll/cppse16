@@ -21,11 +21,11 @@ cursor=11:11
 open=true
 [source]
 path=PokerGame.cpp
-cursor=133:1
+cursor=36:33
 open=true
 [header]
 path=PokerGame.h
-cursor=9:2
+cursor=15:28
 open=true
 [other]
 path=Poker.txt
