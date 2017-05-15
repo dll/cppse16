@@ -17,7 +17,7 @@ current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=62:26
+cursor=81:1
 marker=5
 open=true
 [source]
@@ -25,7 +25,8 @@ path=Point.cpp
 cursor=20:0
 [source]
 path=MyVector.cpp
-cursor=48:14
+cursor=54:5
+open=true
 [source]
 path=MyStack.cpp
 cursor=0:0
@@ -37,7 +38,7 @@ path=Point.h
 cursor=13:10
 [header]
 path=MyVector.h
-cursor=14:6
+cursor=78:8
 open=true
 [header]
 path=MyStack.hpp
@@ -64,7 +65,7 @@ cursor=0:0
 open=true
 [other]
 path=myvector.txt
-cursor=0:0
+cursor=1:0
 open=true
 [other]
 path=myEmployee.txt

@@ -104,6 +104,7 @@ int main(int argc, char *argv[]){
 	ifstream in(readprimefilename.c_str());	// 创建输入流并打开账文件  	if (!in) {		std::cerr << "不能打开readprime文件!\n";		exit(0);	}
 	int low, up;
 	while(in >> low >> up){
+
 		PrimeGenerator pg(low, up);
 		pg.getPrimeSequence();
 		pg.printPrime();

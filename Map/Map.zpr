@@ -16,7 +16,7 @@ current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=3:34
+cursor=14:13
 open=true
 [config]
 name=Debug
@@ -43,7 +43,7 @@ warnings_level=1
 warnings_as_errors=0
 pedantic_errors=0
 std_c=
-std_cpp=
+std_cpp=c++1z
 debug_level=2
 optimization_level=0
 enable_lto=0

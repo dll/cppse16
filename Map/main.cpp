@@ -31,7 +31,7 @@ int GenSpeaker(map<int, Speaker> &mapSpeaker, vector<int> &v){
 		Speaker tmp;
 		tmp.m_name = "选手";
 		tmp.m_name = tmp.m_name + str[i];
-		mapSpeaker.insert(pair<int, Speaker>(100 + i, tmp));//选手放进map
+		mapSpeaker.insert(pair<int, Speaker>(100 + i, tmp));//选手放进map 122选手W 67
 	}
 	for (int i = 0; i < 24; i++)
 		v.push_back(100 + i);//参加本次比赛选手名单
@@ -43,7 +43,7 @@ int speech_contest_draw(vector<int> &v){
 	random_shuffle(v.begin(), v.end());	
 	return 0;
 }
-//选手比赛
+//选手比赛，流程图？
 int speech_contest(int index, vector<int> &v1, map<int, Speaker> &mapSpeaker, vector<int> &v2)
 {
 	//5.小组比赛得分 记录下来 求出前三名 后三名
@@ -55,7 +55,7 @@ int speech_contest(int index, vector<int> &v1, map<int, Speaker> &mapSpeaker, ve
 		//1. 10个评委打分
 		deque<int> dscore;
 		for (int i = 0; i < 10; i++){
-			int score = 50 + rand()%50;
+			int score = 50 + rand()%50;//随机值
 			dscore.push_back(score);
 		}
 		//2. 排序

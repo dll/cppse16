@@ -40,10 +40,14 @@ void testMyVector(){
 	try{
 		MyVector<double> dV1(3,dA1);
 		MyVector<double> dV2(3,dA2);
+		MyVector<double> dV3(3);
 		dV1.display();
 		dV2.display();
+		dV3=dV1+dV2;
+		dV3.display();// 3.333      0.000      0.000
+		dV3.saveMyVector("myvector.txt");
 		MyVector<double> dV4=dV1+dV2;
-		dV4.display();//  2.333      4.555      7.088
+		dV4.display();// 3.333      5.555      8.888
 		dV4.saveMyVector("myvector.txt");
 	}
 	catch(string s){
@@ -70,9 +74,9 @@ void testMyStack(){
 }
 int main (int argc, char *argv[]) {
 
-	testmySwap();	
+//	testmySwap();	
 	testMyVector();	
-	testMyStack();
+//	testMyStack();
 	
 	return 0;
 }
