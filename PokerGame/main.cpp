@@ -3,7 +3,7 @@
 using namespace std;
 
 int main (int argc, char *argv[]) {
-	PokerGame pokergame(4,24);//PokerGame pokergame(4,12);	cout << "洗牌前的扑克牌排列：\n";	pokergame.pokerDisplay();	pokergame.shuffle ();	cout << "洗牌后的扑克牌排列：\n";	pokergame.pokerDisplay();
+	PokerGame pokergame(4,12);	cout << "洗牌前的扑克牌排列：\n";	pokergame.pokerDisplay();	pokergame.shuffle ();	cout << "洗牌后的扑克牌排列：\n";	pokergame.pokerDisplay();
 	pokergame.sendCards();
 	pokergame.pokerBomb();
 	return 0;
