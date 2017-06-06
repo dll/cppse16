@@ -41,6 +41,7 @@ void testDeStackExpressionFile(){
 		ans = expess.CalcPostExp();  
 		fout<<exp<<" => "<<expess.getPostExp()<<" = "<<ans<<endl; 
 		printf("¼ÆËã½á¹û£º %.2f\n\n", ans); 
+		exp="";
 		fin >> exp; 
 	}
 	fin.close();
