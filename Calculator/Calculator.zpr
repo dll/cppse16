@@ -13,11 +13,11 @@ version_required=20130729
 custom_tabs=0
 tab_use_spaces=0
 explorer_path=
-current_source=Test.cpp
+current_source=Calculator.cpp
 path_char=\
 [source]
 path=Calculator.cpp
-cursor=0:0
+cursor=145:9
 open=true
 [source]
 path=Test.cpp
@@ -25,7 +25,7 @@ cursor=159:37
 open=true
 [header]
 path=Calculator.hpp
-cursor=0:0
+cursor=9:9
 open=true
 [header]
 path=Exception.hpp

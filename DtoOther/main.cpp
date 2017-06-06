@@ -1,9 +1,12 @@
 #include "DtoOther.h"
-#include "Express.h"
+#include "DeStackExpression.h"
 #include "StackCalculator.h"
-#include "Calculator.h"
+#include "StackCalculator1.h"
+#include "StackCalculator2.h"
+#include "PriorityCalcultor.h"
 #include<iostream>
 #include<cstdio>
+#include<fstream>
 
 using namespace std;
 void testDtoOther(){
@@ -18,35 +21,56 @@ void testDtoOther(){
 	DtoOther dto5(32767,4); 
 	dto5.convert();
 }
-void testArithmeticExpression(){
+void testDeStackExpression(){
 	double ans = 0; 
 	string exp="";
-	
-	cout << "请输入计算式：";	
+	cout << "请输入计算式\n中缀表达式：";	
 	cin >> exp;  
-	ArithmeticExpression expess(exp);
-	ans = expess.calcExp();  
-	printf("%.2f\n", ans);  
+	DeStackExpression expess(exp);
+	ans = expess.CalcPostExp();  
+	printf("\n计算结果： %.2f\n", ans);  
+}
+void testDeStackExpressionFile(){
+	double ans = 0; 
+	string exp="";
+	ifstream fin("ssexpress.txt");
+	ofstream fout("result.txt");
+	fin >> exp;
+	while(!fin.eof()){
+		DeStackExpression expess(exp);
+		ans = expess.CalcPostExp();  
+		fout<<exp<<" => "<<expess.getPostExp()<<" = "<<ans<<endl; 
+		printf("计算结果： %.2f\n\n", ans); 
+		fin >> exp; 
+	}
+	fin.close();
+	fout.close();
 }
 void testStackCalculator(){
 	cout << "请输入计算式：";
 	string equation="";
 	getline(cin, equation);
-	cout << StackCalculator()(equation);
+	equation+="=";
+	cout << StackCalculator()(equation)<<endl;
+	cout << StackCalculator1()(equation)<<endl;
+	cout << StackCalculator2()(equation)<<endl;
 }
-void testMapCalculator(){
-//	MapCalculator exp=new MapCalculator(); 
-//	exp.transform("(1+2)*3-5+8+(1+2)*3-5+8"); 
+void testPriorityCalcultor(){
+	PriorityCalcultor pc;
+	pc.Calculator();
 }
+
 int main (int argc, char *argv[]) {
 
-	testDtoOther();
+//	testDtoOther();
 	
-//	testArithmeticExpression(); 
+//	testDeStackExpression(); 
+	testDeStackExpressionFile();
 	
 //	testStackCalculator();
 	
-	testCalculator();
+//	testPriorityCalcultor();
+	
 	return 0;
 }
 

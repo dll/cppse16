@@ -13,11 +13,11 @@ version_required=20130729
 custom_tabs=0
 tab_use_spaces=0
 explorer_path=
-current_source=test.cpp
+current_source=calculator.hpp
 path_char=\
 [source]
 path=calculator.cpp
-cursor=30:1
+cursor=29:0
 open=true
 [source]
 path=test.cpp
@@ -25,7 +25,7 @@ cursor=7:13
 open=true
 [header]
 path=calculator.hpp
-cursor=20:12
+cursor=27:7
 open=true
 [config]
 name=Debug
