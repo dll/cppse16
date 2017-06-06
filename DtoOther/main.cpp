@@ -33,15 +33,16 @@ void testDeStackExpression(){
 void testDeStackExpressionFile(){
 	double ans = 0; 
 	string exp="";
+	string post="";
 	ifstream fin("ssexpress.txt");
 	ofstream fout("result.txt");
 	fin >> exp;
 	while(!fin.eof()){
-		DeStackExpression expess(exp);
-		ans = expess.CalcPostExp();  
-		fout<<exp<<" => "<<expess.getPostExp()<<" = "<<ans<<endl; 
-		printf("¼ÆËã½á¹û£º %.2f\n\n", ans); 
-		exp="";
+		DeStackExpression expess(exp); 
+		post = expess.getPostExp();
+		ans = expess.CalcPostExp();
+		fout<<exp<<" => "<<post<<" = "<<ans<<endl<<endl; 
+		cout<<exp<<" => "<<post<<" = "<<ans<<endl<<endl; 
 		fin >> exp; 
 	}
 	fin.close();
