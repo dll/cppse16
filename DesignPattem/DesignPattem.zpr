@@ -17,7 +17,7 @@ current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=55:32
+cursor=130:1
 open=true
 [source]
 path=DrawFactory.cpp
