@@ -12,12 +12,10 @@ version_required=20130729
 custom_tabs=0
 tab_use_spaces=0
 explorer_path=
-current_source=main.cpp
 path_char=\
 [source]
 path=main.cpp
-cursor=45:20
-open=true
+cursor=80:19
 [config]
 name=Debug
 toolchain=

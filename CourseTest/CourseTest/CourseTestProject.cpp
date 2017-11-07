@@ -8,6 +8,9 @@ void CourseTestProject::InitialTestProjectFromFile(){
 	try{
 		ifstream ifin("project.dat",ios::in);
 		string no,name,proj;
+		if (!ifin.is_open()){
+			throw string("Read project.dat failed!");
+		}
 		while(ifin>>no>>name>>proj){
 			TestProject tp;
 			tp.stuNo=no;tp.stuName=name;tp.ctProject=proj;
@@ -17,9 +20,8 @@ void CourseTestProject::InitialTestProjectFromFile(){
 			stuprjNum++;
 		}
 		ifin.close();
-	}catch(std::exception const& e){
-		cout<<"Read project.dat failed!"<<endl;
-		cout << "Exception: " << e.what() <<endl;
+	}catch(string const& s){
+		cout << "Exception: " << s <<endl;
 		system("pause");
 		exit(1);
 	}
@@ -32,7 +34,6 @@ void CourseTestProject::RandomShuffleTestProject(){
 //	random_shuffle(tps.begin(), tps.end());	
 	// 使用系统时钟作为种子
 	shuffle(tps.begin(), tps.end(), default_random_engine(seed));
-	
 	int i;
 	for(i=0;i<initialTestProject.size();i++){
 		finalTestProject.at(i).ctProject=tps.at(i);
@@ -43,8 +44,7 @@ void CourseTestProject::RandomShuffleTestProject(){
 }
 const string getCurrentSystemTime()
 {
-	auto tt = std::chrono::system_clock::to_time_t
-		(chrono::system_clock::now());
+	auto tt = chrono::system_clock::to_time_t(chrono::system_clock::now());
 	struct tm* ptm = localtime(&tt);
 	char date[60] = {0};
 	sprintf(date, "%d-%02d-%02d      %02d:%02d:%02d",
@@ -69,6 +69,7 @@ void CourseTestProject::FinalTestProjectOutput(){
 		
 	}catch(...){
 		cout<<"Write project.res failed!"<<endl;
+		system("pause");
 		exit(1);
 	}
 	

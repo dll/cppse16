@@ -1,6 +1,8 @@
 #include<iostream>
 #include<iomanip>
 #include<fstream>
+#include<vector>
+
 using namespace std;
 #include"Point.h"
 #include "MyVector.h"
@@ -72,11 +74,37 @@ void testMyStack(){
 	EmployeeStackTmp.display();
 	eifs.close();
 }
+class EmpManage{
+public:
+	
+	void AddEmp(){//增加员工方法
+		string n;
+		int a;
+		char g;
+		unsigned w;
+		double s;
+		
+		vector<Employee> EmployeeStackTmp(41);//类属
+		//	EmployeeStackTmp.init();
+		ifstream eifs("myEmployee.data");
+		while(eifs>>n>>a>>g>>w>>s){
+			Employee empn(n,a,g,w,s);
+			EmployeeStackTmp.push_back(empn);
+		}
+		for(Employee emp:EmployeeStackTmp)
+			  cout<<emp.getName()<<endl;
+		
+		eifs.close();
+	}
+};
+
 int main (int argc, char *argv[]) {
 
 //	testmySwap();	
-	testMyVector();	
+//	testMyVector();	
 //	testMyStack();
+	EmpManage em;
+	em.AddEmp();
 	
 	return 0;
 }
